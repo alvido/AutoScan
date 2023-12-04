@@ -67,42 +67,6 @@ img {
   display: block;
 }
 
-@font-face {
-  font-family: "lato";
-  src: url("../fonts/lato-light.woff"), url("../fonts/lato-light.woff2");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "lato";
-  src: url("../fonts/lato-lightitalic.woff"), url("../fonts/lato-lightitalic.woff2");
-  font-weight: 300;
-  font-style: italic;
-}
-@font-face {
-  font-family: "lato";
-  src: url("../fonts/lato-regular.woff"), url("../fonts/lato-regular.woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "lato";
-  src: url("../fonts/lato-bold.woff"), url("../fonts/lato-bold.woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "GothamPro";
-  src: url("../fonts/GothamPro.woff"), url("../fonts/GothamPro.woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "GothamPro";
-  src: url("../fonts/GothamPro-Bold.woff"), url("../fonts/GothamPro-Bold.woff2");
-  font-weight: 700;
-  font-style: normal;
-}
 body {
   font-family: "Overpass", sans-serif;
   font-size: 20px;
@@ -406,13 +370,43 @@ a {
   color: #B8995E;
 }
 
-footer {
-  height: 800px;
+.footer {
+  padding: 40px 0;
+  background: #272727;
+  -webkit-box-shadow: 4px 4px 35px 0px rgba(102, 102, 102, 0.25);
+          box-shadow: 4px 4px 35px 0px rgba(102, 102, 102, 0.25);
 }
-
-.hero {
-  min-height: 100vh;
-  padding: 100px 0;
+@media (max-width: 560px) {
+  .footer {
+    padding: 20px 0;
+  }
+}
+.footer__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0 35px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media (max-width: 1000px) {
+  .footer__wrapper {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: minmax(0, 80px) minmax(0, 150px) 1fr; /* Первый столбец минимальной ширины, остальные занимают равное пространство */
+    gap: 0 30px;
+  }
+}
+@media (max-width: 768px) {
+  .footer__wrapper {
+    gap: 10px 20px;
+  }
 }
 @media (max-width: 560px) {
   .footer__wrapper {
@@ -1311,10 +1305,10 @@ footer {
   position: absolute;
   top: 50%;
   translate: 0 -50%;
-  width: 70px;
+  width: 60px;
   height: 70px;
-  background: url(../images/arrow.svg) no-repeat;
-  background-position: -8px -2px;
+  background: url(../images/arrow2.svg) no-repeat center;
+  background-size: cover;
   border-radius: 4px;
   font-size: 0;
   cursor: pointer;
@@ -1324,7 +1318,6 @@ footer {
   .cars .slider .slick-arrow {
     width: 50px;
     height: 50px;
-    background-size: cover;
   }
 }
 .cars .slider .slick-arrow.slick-prev {

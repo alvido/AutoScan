@@ -26,21 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // smooth scroll
-// $("[data-scroll]").on("click", function (event) {
-//   event.preventDefault();
-
-//   var $this = $(this),
-//     blockId = $(this).data('scroll'),
-//     blockOffset = $(blockId).offset().top;
-
-//   $("body").removeClass("lock");
-//   $(".navigation ").removeClass("active");
-//   $("#burger ").removeClass("active");
-
-//   $("html, body").animate({
-//     scrollTop: blockOffset
-//   }, 600);
-// });
 document.addEventListener("DOMContentLoaded", function () {
   // Add smooth scroll to all internal links
   const internalLinks = document.querySelectorAll('a[href^="#"]');
