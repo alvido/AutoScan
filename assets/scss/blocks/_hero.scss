@@ -1,0 +1,152 @@
+.hero {
+
+    &__wrapper {
+        min-height: calc(100vh - 120px);
+        padding: 100px 0;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        position: relative;
+
+        @include ipad {
+            min-height: calc(100vh - 80px);
+            padding: 60px 0;
+
+        }
+
+        @include mobile {
+            padding: 40px 0;
+        }
+    }
+
+    &__content {
+        width: 650px;
+
+        @include laptop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-size: 80px;
+        font-weight: 600;
+        line-height: 1.125;
+        text-transform: uppercase;
+
+        @include desktop {
+            font-size: 60px;
+        }
+
+        @include laptop {
+            text-align: center;
+        }
+
+        @include mobile {
+            font-size: 40px;
+        }
+
+        & span {
+            background: linear-gradient(175deg, #B8995E 59.15%, #F6EEAB 74.61%, #C19A5F 101.52%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    &__text {
+        margin: 30px 0 50px;
+        font-size: 18px;
+        max-width: 540px;
+        opacity: 0.8;
+
+        @include laptop {
+            max-width: none;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        @include mobile {
+            font-size: 16px;
+            max-width: 70%;
+            min-width: 260px;
+        }
+
+        @include mobile {
+            font-size: 14px;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        right: 0;
+
+        @include desktop {
+            width: 420px;
+        }
+
+        @include laptop {
+            position: static;
+            width: auto;
+            translate: 0 0;
+        }
+
+        @include mobile {
+            width: 80%;
+        }
+    }
+}
+
+#heroForm {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    @include laptop {
+        margin-top: 30px;
+        gap: 15px;
+    }
+
+    input {
+        padding: 0 30px 0 110px;
+        font-size: 17px;
+        font-weight: 300;
+        position: relative;
+        width: 300px;
+        height: 70px;
+        flex-shrink: 0;
+        border-radius: 15px;
+        border: 1px solid #FFF;
+        background: url(../images/vin-decor.svg) no-repeat left, linear-gradient(0deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.30) 100%), #EDEDED;
+        background-size: contain;
+        box-shadow: -3px -3px 5px 0px rgba(125, 125, 125, 0.25) inset, 2px 2px 10px 0px rgba(125, 125, 125, 0.25) inset, 2px 2px 15px 0px rgba(255, 255, 255, 0.15);
+        outline: none;
+
+        @include phone {
+            width: 236px;
+            height: 55px;
+            font-size: 13px;
+            padding: 0 20px;
+            border-radius: 12px;
+
+        }
+
+        &:focus-visible {
+            box-shadow: none;
+            border: 2px solid $gold;
+        }
+    }
+}
+
+.screen__video {
+    display: block;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}

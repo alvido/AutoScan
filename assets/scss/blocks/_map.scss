@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+.map {
+    padding: 100px 0;
+
+    @include tablet {
+        padding: 50px 0;
+    }
+
+    & iframe {
+        width: 100%;
+        height: 530px;
+        border-radius: 11px;
+    }
+=======
+.map {
+    padding: 100px 0;
+
+    @include tablet {
+        padding: 50px 0;
+    }
+
+    & iframe {
+        width: 100%;
+        height: 530px;
+        border-radius: 11px;
+    }
+>>>>>>> 7aa95e97a424412ad8c64289a6bc9aa879ca72b9
+}

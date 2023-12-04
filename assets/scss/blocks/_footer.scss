@@ -1,0 +1,116 @@
+.footer {
+    padding: 40px 0;
+    background: #272727;
+    box-shadow: 4px 4px 35px 0px rgba(102, 102, 102, 0.25);
+
+    @include mobile {
+        padding: 20px 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0 35px;
+        flex-wrap: wrap;
+
+        @include laptop {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: minmax(0, 80px) minmax(0, 150px) 1fr; /* Первый столбец минимальной ширины, остальные занимают равное пространство */
+            gap: 0 30px;
+        }
+
+        @include tablet {
+            gap: 10px 20px;
+        }
+
+        @include mobile {
+            gap: 0px 15px;
+            grid-template-columns: minmax(0, 50px) minmax(0, 110px) 1fr; /* Первый столбец минимальной ширины, остальные занимают равное пространство */
+        }
+
+        @include phone {
+            gap: 10px 15px;
+            grid-template-columns: minmax(0, 40px) minmax(0, 90px) 1fr; /* Первый столбец минимальной ширины, остальные занимают равное пространство */
+        }
+    }
+
+    &__logo {
+        grid-row: span 2;
+        grid-column: 1;
+
+        @include mobile {
+            width: 50px;
+        }
+
+        @include phone {
+            width: 40px;
+        }
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    &__col {
+        font-size: 15px;
+        line-height: 130%;
+
+        @include laptop {
+            &.--opening {
+                grid-row: 1;
+                grid-column: 2;
+            }
+
+            &.--contact {
+                grid-row: 1;
+                grid-column: 3;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-self: end;
+            }
+        }
+
+        @include ipad {
+            font-size: 12px;
+        }
+
+        @include tablet {
+            font-size: 10px;
+        }
+
+        @include mobile {
+            font-size: 1.8vw;
+        }
+
+        @include phone {
+            font-size: 8px;
+        }
+    }
+
+    &__link {
+        display: block;
+        transition: all .3s ease;
+        margin-top: 10px;
+
+        @include mobile {
+            margin-top: 5px;
+        }
+
+        @include phone {
+            margin-top: 0px;
+        }
+
+        &:hover {
+            color: $gold;
+        }
+    }
+
+    & .button {
+        grid-row: 2;
+        grid-column: 2 / span 2;
+        justify-self: center;
+    }
+}

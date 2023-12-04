@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoScandic</title>
+    <link rel="icon" type="image/png" href="/assets/images/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <!-- <link rel="stylesheet" href="assets/css/slick-theme.css"> -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <nav class="navigation">
+                    <ul class="navigation__list">
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">
+                                Cars to Export
+                            </a>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#contact" class="navigation__link">
+                                Kontakt
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="button">Sælg din bil</button>
+                <button class="burger" id="burger"><span>burger</span></button>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="cars">
+            <div class="container">
+                <h1 class="cars__title">
+                    Disse biler har vi tidligere <span>købt</span>
+                </h1>
+                <ul class="slider" id="cars__slider">
+                    <li class="slider__item">
+                        <img src="assets/images/cars/car1.png" alt="">
+                    </li>
+                    <li class="slider__item">
+                        <img src="assets/images/cars/car2.png" alt="">
+                    </li>
+                    <li class="slider__item">
+                        <img src="assets/images/cars/car3.png" alt="">
+                    </li>
+                    <li class="slider__item">
+                        <img src="assets/images/cars/car4.png" alt="">
+                    </li>
+                    <li class="slider__item">
+                        <img src="assets/images/cars/car5.png" alt="">
+                    </li>
+                    <li class="slider__item">
+                        <img src="assets/images/cars/car6.png" alt="">
+                    </li>
+                    <li class="slider__item">
+                        <img src="assets/images/cars/car7.png" alt="">
+                    </li>
+                    <li class="slider__item">
+                        <img src="assets/images/cars/car8.png" alt="">
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact__wrapper">
+                    <img class="contact__img" src="assets/images/men.png" alt="">
+                    <div class="contact__content">
+                        <h2 class="contact__title">
+                            Kontakt os i dag
+                        </h2>
+                        <p class="contact__text">
+                            Udfyld formularen og vi kontakter dig indenfor 24 timer på alle hverdage.
+                        </p>
+
+                        <form class="contact__form" action="" id="concactForm1" method="post">
+                            <input type="text" id="buyContactName" name="buyContactName" required placeholder="Navn*">
+                            <input type="email" id="buyContactEmail" name="buyContactEmail" required
+                                placeholder="E-mail*">
+                            <input type="tel" id="buyContactPhone" name="buyContactPhone" required
+                                placeholder="Telefonnr.*">
+                            <textarea id="message" name="buyContactMessage" rows="4"
+                                placeholder="Besked (multiline text)"></textarea>
+                            <label class="contact__agree" for="buyContactPermission">
+                                <input type="checkbox" id="buyContactPermission" name="buyContactPermission" required>
+                                <span>
+                                    Ja, jeg giver tilladelse til, at Autobasen må kontakte mig på enten
+                                    mail eller telefon samt behandle ovenstående persondata i overensstemmelse med vores
+                                    <a href="#" rel="nofollow" title="Vilkår for behandling af personoplysninger">vilkår
+                                        for behandling af personoplysninger</a>.
+                                    Vi opbevarer dine persondata,
+                                    indtil du tilbagekalder dit samtykke.
+                                </span>
+                            </label>
+                            <button class="contact__button" type="submit">Næste</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <div class="container">
+                <img src="assets/images/work.png" alt="">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <a href="/index.html" class="footer__logo">
+                    <img src="assets/images/logo.png" alt="">
+                </a>
+                <div class="footer__col --opening">
+                    <p class="footer__text">
+                        Åbningstider
+                        <br>
+                        Mandag – fredag 9 -17
+                        <br>
+                        Lørdag – Søndag lukket
+                    </p>
+                </div>
+                <div class="footer__col --contact">
+                    <p class="footer__text">
+                        Kontakt Autoscandic
+                        <br>
+                        AutobasenP.O Pedersens vej 14BDK-8200 Århus N
+                    </p>
+                    <a href="tel:+4570207446" class="footer__link">
+                        Hovedkontor + 45 70 20 74 46
+                    </a>
+                    <a href="mailto:dk@autobasen.dk" class="footer__link">
+                        E-mail dk@autobasen.dk
+                    </a>
+                </div>
+                <button class="button">Sælg din bil</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

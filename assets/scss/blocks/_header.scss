@@ -1,0 +1,186 @@
+<<<<<<< HEAD
+.header {
+    // position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    min-height: 120px;
+    border-bottom: 1px solid rgba(42, 42, 42, 0.6);
+    background: rgba(42, 42, 42, 1);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.22);
+
+    &.fixed {
+        position: fixed;
+        min-height: 100px;
+    }
+
+    @include ipad {
+        min-height: 80px;
+    }
+
+    @include phone {
+        min-height: 50px;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+
+
+.navigation {
+    margin-right: 95px;
+    transition: all .3s ease;
+
+    @include ipad {
+
+        position: absolute;
+        right: 00%;
+        top: 0%;
+        margin: 0;
+        width: 50%;
+        height: 0;
+        padding: 0px 30px;
+        background: rgba(42, 42, 42, 1);
+        opacity: 0;
+        visibility: hidden;
+        overflow: scroll;
+        z-index: 1;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            height: 100vh;
+            padding: 60px 30px;
+        }
+    }
+
+    @include mobile {
+        width: 80%;
+    }
+
+    @include mobile {
+        width: 90%;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        @include ipad {
+            flex-direction: column;
+        }
+    }
+
+    &__item {}
+
+    &__link {
+        color: $white;
+        font-size: 22px;
+        letter-spacing: 1.1px;
+        transition: color .3s ease;
+
+        &:hover {
+            color: $gold;
+        }
+    }
+=======
+.header {
+    // position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    min-height: 120px;
+    border-bottom: 1px solid rgba(42, 42, 42, 0.6);
+    background: rgba(42, 42, 42, 1);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.22);
+
+    &.fixed {
+        position: fixed;
+        min-height: 100px;
+    }
+
+    @include ipad {
+        min-height: 80px;
+    }
+
+    @include phone {
+        min-height: 50px;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+
+
+.navigation {
+    margin-right: 95px;
+    transition: all .3s ease;
+
+    @include ipad {
+
+        position: absolute;
+        right: 00%;
+        top: 0%;
+        margin: 0;
+        width: 50%;
+        height: 0;
+        padding: 0px 30px;
+        background: rgba(42, 42, 42, 1);
+        opacity: 0;
+        visibility: hidden;
+        overflow: scroll;
+        z-index: 1;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            height: 100vh;
+            padding: 60px 30px;
+        }
+    }
+
+    @include mobile {
+        width: 80%;
+    }
+
+    @include mobile {
+        width: 90%;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        @include ipad {
+            flex-direction: column;
+        }
+    }
+
+    &__item {}
+
+    &__link {
+        color: $white;
+        font-size: 22px;
+        letter-spacing: 1.1px;
+        transition: color .3s ease;
+
+        &:hover {
+            color: $gold;
+        }
+    }
+>>>>>>> 7aa95e97a424412ad8c64289a6bc9aa879ca72b9
+}

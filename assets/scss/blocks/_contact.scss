@@ -1,0 +1,372 @@
+<<<<<<< HEAD
+.contact {
+    padding: 100px 0 0 0;
+
+    @include laptop {
+        padding: 50px 0 0 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: relative;
+        padding: 0px 45px 0 0;
+        border-radius: 11px;
+        background: linear-gradient(182deg, #B8995E -42.64%, #F6EEAB -27.71%, #C19A5F 92.48%, #C19A5F 105.79%);
+        box-shadow: -4px 5px 22px -12px #000;
+
+        @include laptop {
+            justify-content: center;
+            padding: 0 30px;
+        }
+    }
+
+    &__img {
+        width: 45%;
+        min-width: 460px;
+
+        @include laptop {
+            display: none;
+        }
+    }
+
+    &__content {
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 60%;
+        max-width: 630px;
+
+        @include laptop {
+            align-items: center;
+            width: 80%;
+        }
+
+        @include mobile {
+            padding: 30px 0;
+            width: 100%;
+        }
+
+    }
+
+    &__title {
+        color: #000;
+        font-family: Roboto;
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 129.412%;
+
+        @include laptop {
+            text-align: center;
+        }
+
+        @include mobile {
+            font-size: 30px;
+        }
+    }
+
+    &__text {
+        color: #000;
+        font-family: Roboto;
+        font-size: 16px;
+        line-height: 175%;
+
+        @include laptop {
+            text-align: center;
+        }
+
+        @include mobile {
+            font-size: 12px;
+            max-width: 200px;
+        }
+    }
+
+    &__form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+
+        & input {
+            color: #B0B0B0;
+            font-family: Roboto;
+            font-size: 15px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 11px;
+            border: 1px solid rgba(51, 51, 51, 0.11);
+            background: #FDFDFD;
+            outline: none;
+
+            @include phone {
+                font-size: 12px;
+            }
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &:focus-visible {
+                border: 1px solid #000;
+            }
+        }
+
+        & textarea {
+            color: #B0B0B0;
+            font-family: Roboto;
+            font-size: 15px;
+            resize: none;
+            padding: 24px 15px;
+            border-radius: 11px;
+            border: 1px solid rgba(51, 51, 51, 0.11);
+            background: #FDFDFD;
+            outline: none;
+            margin-bottom: 10px;
+
+            @include phone {
+                font-size: 12px;
+                padding: 15px;
+            }
+
+            &:focus-visible {
+                border: 1px solid #000;
+            }
+        }
+
+        & .contact__agree {
+            color: #000;
+            font-family: Roboto;
+            font-size: 11px;
+            line-height: 136.364%;
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+
+            @include mobile {
+                font-size: 6px;
+            }
+
+            & #mainContactPermission {
+                margin-right: 5px;
+            }
+
+            & a {
+                color: inherit;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__button {
+        margin-top: 30px;
+        width: 300px;
+        height: 55px;
+        color: #000;
+        font-weight: 500;
+        line-height: 108%;
+        border-radius: 15px;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.30) 100%), linear-gradient(192deg, #B8995E -21.68%, #F6EEAB 7.13%, #C19A5F 124.76%);
+
+        @include laptop {
+            margin: 30px auto 0;
+        }
+
+        @include mobile {
+            width: 200px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        @include phone {
+            margin: 20px auto 0;
+        }
+    }
+=======
+.contact {
+    padding: 100px 0 0 0;
+
+    @include laptop {
+        padding: 50px 0 0 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: relative;
+        padding: 0px 45px 0 0;
+        border-radius: 11px;
+        background: linear-gradient(182deg, #B8995E -42.64%, #F6EEAB -27.71%, #C19A5F 92.48%, #C19A5F 105.79%);
+        box-shadow: -4px 5px 22px -12px #000;
+
+        @include laptop {
+            justify-content: center;
+            padding: 0 30px;
+        }
+    }
+
+    &__img {
+        width: 45%;
+        min-width: 460px;
+
+        @include laptop {
+            display: none;
+        }
+    }
+
+    &__content {
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 60%;
+        max-width: 630px;
+
+        @include laptop {
+            align-items: center;
+            width: 80%;
+        }
+
+        @include mobile {
+            padding: 30px 0;
+            width: 100%;
+        }
+
+    }
+
+    &__title {
+        color: #000;
+        font-family: Roboto;
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 129.412%;
+
+        @include laptop {
+            text-align: center;
+        }
+
+        @include mobile {
+            font-size: 30px;
+        }
+    }
+
+    &__text {
+        color: #000;
+        font-family: Roboto;
+        font-size: 16px;
+        line-height: 175%;
+
+        @include laptop {
+            text-align: center;
+        }
+
+        @include mobile {
+            font-size: 12px;
+            max-width: 200px;
+        }
+    }
+
+    &__form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+
+        & input {
+            color: #B0B0B0;
+            font-family: Roboto;
+            font-size: 15px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 11px;
+            border: 1px solid rgba(51, 51, 51, 0.11);
+            background: #FDFDFD;
+            outline: none;
+
+            @include phone {
+                font-size: 12px;
+            }
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &:focus-visible {
+                border: 1px solid #000;
+            }
+        }
+
+        & textarea {
+            color: #B0B0B0;
+            font-family: Roboto;
+            font-size: 15px;
+            resize: none;
+            padding: 24px 15px;
+            border-radius: 11px;
+            border: 1px solid rgba(51, 51, 51, 0.11);
+            background: #FDFDFD;
+            outline: none;
+            margin-bottom: 10px;
+
+            @include phone {
+                font-size: 12px;
+                padding: 15px;
+            }
+
+            &:focus-visible {
+                border: 1px solid #000;
+            }
+        }
+
+        & .contact__agree {
+            color: #000;
+            font-family: Roboto;
+            font-size: 11px;
+            line-height: 136.364%;
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+
+            @include mobile {
+                font-size: 6px;
+            }
+
+            & #mainContactPermission {
+                margin-right: 5px;
+            }
+
+            & a {
+                color: inherit;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__button {
+        margin-top: 30px;
+        width: 300px;
+        height: 55px;
+        color: #000;
+        font-weight: 500;
+        line-height: 108%;
+        border-radius: 15px;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.30) 100%), linear-gradient(192deg, #B8995E -21.68%, #F6EEAB 7.13%, #C19A5F 124.76%);
+
+        @include laptop {
+            margin: 30px auto 0;
+        }
+
+        @include mobile {
+            width: 200px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        @include phone {
+            margin: 20px auto 0;
+        }
+    }
+>>>>>>> 7aa95e97a424412ad8c64289a6bc9aa879ca72b9
+}
