@@ -69,7 +69,8 @@
                             <div class="information__form--step-header">
                                 <span class="information__form--step-number">1</span>
                                 <h3 class="information__form--step-title">Bilens informationer</h3> <!---->
-                                <button class="information__form--step-edit">Rediger</button>
+                                <button class="information__form--step-edit"
+                                    onclick="toggleClasses(this)">Rediger</button>
                             </div>
 
                             <div class="information__form--step-content">
@@ -78,9 +79,17 @@
                                         Nummerplade
                                     </label>
                                     <div class="form-field">
-                                        <input id="plate" name="plate" type="text" class="form-input" inputmode="text"
-                                            placeholder="av-12356" disabled="disabled">
-                                        <div class="form-edit"></div>
+                                        <input id="plate" name="plate" type="text" class="form-input no-radius"
+                                            inputmode="text" placeholder="AA-123456" oninput="formatInput(this)" disabled>
+                                        <button type="button" class="form-edit" onclick="enablePlateInput()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                viewBox="0 0 15 15" fill="none">
+                                                <rect x="0.966628" y="11.3401" width="15" height="3.00001" rx="0.5"
+                                                    transform="rotate(-45 0.966628 11.3401)" fill="#040404" />
+                                                <rect x="0.966628" y="11.3401" width="15" height="3.00001" rx="0.5"
+                                                    transform="rotate(-45 0.966628 11.3401)" stroke="#040404" />
+                                            </svg>
+                                        </button>
                                     </div> <!---->
                                     <div class="car-fetch-wrapper">
                                         AUDI A3 Sportback, Hatchback, 2014, 2.0 TDI 150 HK 5-DØRS S tronic
@@ -88,7 +97,7 @@
                                 </fieldset>
                                 <fieldset class="form-group">
                                     <label for="milage" class="form-label">Antal kørte kilometer</label>
-                                    <input id="milage" name="milage" type="text" class="form-input radius"> <!---->
+                                    <input id="milage" name="milage" type="text" class="form-input"> <!---->
                                     <!---->
                                 </fieldset>
                                 <div class="form-columns">
@@ -250,7 +259,8 @@
                                         af din bil. Det er ikke et krav, men vi vil opfordre dig til at uploade nogle.
                                     </p>
                                 </div>
-                                <button class="information__form--step-edit">Rediger</button>
+                                <button class="information__form--step-edit"
+                                    onclick="toggleClasses(this)">Rediger</button>
                             </div>
 
                             <div class="information__form--step-content">
@@ -327,14 +337,44 @@
                             </div>
                         </div>
 
-                        <div id="information__form--step3" data-step="3" class="information__form--step active done">
+                        <div id="information__form--step3" data-step="3" class="information__form--step active">
                             <div class="information__form--step-header">
                                 <span class="information__form--step-number">3</span>
                                 <h3 class="information__form--step-title">Kontaktoplysninger</h3> <!---->
-                                <button class="information__form--step-edit">Rediger</button>
+                                <button type="button" class="information__form--step-edit"
+                                    onclick="toggleClasses(this)">Rediger</button>
                             </div>
 
                             <div class="information__form--step-content">
+
+                                <fieldset class="form-group">
+                                    <label class="form-label" id="label-email" placeholder="Enter your E-mailadresse"
+                                        for="email">
+                                        E-mailadresse
+                                    </label>
+                                    <input class="form-input" id="email" name="email" required="" placeholder=""
+                                        type="email" inputmode="email" autocomplete="email" value="">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="form-label" id="label-firstname" placeholder="Enter your Fornavn"
+                                        for="firstname">Fornavn</label>
+                                    <input class="form-input" id="firstname" name="firstname" required="" placeholder=""
+                                        type="text" inputmode="text" autocomplete="given-name" value="">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="form-label" id="label-zip" placeholder="Enter your Postnummer"
+                                        for="zip">Postnummer</label>
+                                    <input class="form-input" id="zip" name="zip" required="" placeholder="" type="text"
+                                        inputmode="text" autocomplete="postal-code" value="">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label class="form-label" id="label-phone" placeholder="Enter your Telefonnummer"
+                                        for="phone">Telefonnummer</label>
+                                    <input class="form-input" id="phone" name="phone" required="" placeholder=""
+                                        type="tel" inputmode="tel" autocomplete="tel" value="">
+                                </fieldset>
+
+
 
                                 <fieldset class="form-submit">
                                     <button class="contact__button">Næste</button>

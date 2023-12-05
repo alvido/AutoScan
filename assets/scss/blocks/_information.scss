@@ -1,73 +1,19 @@
-.car-flow .form-group.form-group--error .error-message {
-    display: block;
-}
-
-
-
-
-
-.car-flow-image-drop-container .error-message {
-    display: none;
-    font-size: .75rem;
-    margin: .25rem 0;
-    color: #f55b5f;
-    position: absolute;
-}
-
-.car-flow-image-drop-container.form-group--error {
-    border-color: #f55b5f;
-}
-
-.car-flow-image-drop-container.form-group--error .error-message {
-    display: block;
-}
-
-.car-flow-image-drop-container.form-group--success {
-    border-color: #00b961;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .information {
 
     padding: 100px 0;
+
+    @include tablet {
+        padding: 50px 0;
+    }
 
     &__wrapper {
         padding: 60px 30px;
         border-radius: 15px;
         background: linear-gradient(241deg, #B8995E 4.9%, #EFE3A1 57.84%, #C19A5F 102.3%);
+
+        @include tablet {
+            padding: 20px;
+        }
     }
 
     &__head {
@@ -75,12 +21,30 @@
         align-items: center;
         gap: 30px;
 
+        @include tablet {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        @include mobile {
+            & .information__head--link img {
+                max-width: 50px;
+            }
+        }
+
         & p {
-            width: 580px;
+            max-width: 580px;
             color: #000;
             font-family: Roboto;
-            font-size: 16px;
+            font-size: clamp(0.625rem, 0.493rem + 0.66vw, 1rem);
             line-height: 175%;
+
+            @include tablet {
+                text-align: center;
+                max-width: 90%;
+                margin: 0 auto;
+                line-height: 1.5;
+            }
 
             & a {
                 color: #00B861;
@@ -90,13 +54,13 @@
     }
 
     &__form {
-        margin-top: 70px;
+        margin-top: clamp(1.25rem, 0.151rem + 5.49vw, 4.375rem);
         font-family: Roboto;
         font-size: 16px;
         line-height: 1.35;
 
         &--step {
-            margin-bottom: 12px;
+            margin-bottom: 30px;
             padding: 0px 25px;
             color: $dark-bg;
             background: $white;
@@ -104,6 +68,10 @@
             border: 1px solid rgba(208, 208, 208, 0.50);
             box-shadow: 3px 3px 81px 0px rgba(0, 0, 0, 0.20);
             opacity: 0.6;
+
+            @include mobile {
+                padding: 0 30px;
+            }
 
             &:last-child {
                 margin: 0;
@@ -118,6 +86,14 @@
                     height: auto;
                     opacity: 1;
                     visibility: visible;
+
+                    @include laptop {
+                        padding: 0 30px 50px;
+                    }
+
+                    @include mobile {
+                        padding: 0;
+                    }
                 }
 
                 & .information__form--step-number {
@@ -150,6 +126,10 @@
                 display: flex;
                 align-items: center;
                 position: relative;
+
+                @include mobile {
+                    padding: 30px 0;
+                }
 
                 &--wrapper {
 
@@ -184,9 +164,10 @@
             &-edit {
                 display: none;
                 margin-left: auto;
-                width: 50px;
-                height: 50px;
+                width: 30px;
+                height: 30px;
                 font-size: 0;
+                border-radius: 4px;
                 border: 2px solid $gold;
                 background: url(/assets/images/edit.svg) no-repeat center $transparent;
                 cursor: pointer;
@@ -210,6 +191,11 @@
         padding: 10px 0 24px 0;
         border-bottom: 1px solid #EAF2F7;
 
+        @include tablet {
+            margin: 0;
+            padding: 15px 0;
+        }
+
         &.last-child {
             border: 0;
             margin: 0;
@@ -226,12 +212,42 @@
         justify-content: space-between;
         margin: 0 0 10px 0;
         padding: 10px 0 24px 0;
+        gap: 10px;
         border-bottom: 1px solid #EAF2F7;
+
+        @include laptop {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            padding: 0px;
+            margin: 0;
+            gap: 0;
+            border: none;
+        }
 
         & .form-group {
             padding: 0;
             margin: 0;
             border: none;
+
+            @include laptop {
+
+                &#accessories {
+                    grid-row: 2;
+                    grid-column: 1/span 2;
+                }
+            }
+
+            @include tablet {
+                padding: 15px 0;
+                border-bottom: 1px solid #EAF2F7;
+            }
+
         }
     }
 
@@ -253,12 +269,18 @@
         padding: 16px;
         font-size: 16px;
         color: #777474;
-        text-transform: uppercase;
-        border-radius: 3px 0px 0px 3px;
+        border-radius: 11px;
         border: 1px solid #D0D0D0;
 
-        &.radius {
-            border-radius: 11px;
+        @include tablet {
+            height: 40px;
+            padding: 10px 16px;
+        }
+
+        &.no-radius {
+            width: calc(100% - 54px);
+            border-radius: 3px 0px 0px 3px;
+            text-transform: uppercase;
         }
     }
 
@@ -276,8 +298,25 @@
         height: 54px;
         border-radius: 0px 3px 3px 0px;
         border: 1px solid #D0D0D0;
-        background: #F6F6F6 url(../images/edit.svg) no-repeat center;
+        transition: all .3s ease;
         cursor: pointer;
+
+        @include tablet {
+            width: 40px;
+            height: 40px;
+        }
+
+        & svg {
+            transition: all .3s ease;
+        }
+
+        &.edit {
+
+            & svg {
+                rotate: 45deg;
+
+            }
+        }
     }
 
     &-submit {
@@ -310,7 +349,11 @@
 
     &-wrapper {
         columns: 2;
-        gap: 70px;
+        gap: clamp(0.625rem, -15.679rem + 26.09vw, 4.375rem);
+
+        @include tablet {
+            columns: 1;
+        }
     }
 
 }
@@ -322,17 +365,28 @@
 
 
 .information__form--step-drop-container {
+    display: flex;
     border-radius: 11px;
     border: 3px dashed #B8995E;
+
+    @include tablet {
+        flex-direction: column;
+    }
 
     & .uploaded-images {
         display: none;
         width: 25%;
+        min-width: 175px;
         min-height: 340px;
         overflow: auto;
         background: #f6f6f6;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
+
+        @include tablet {
+            width: 100%;
+            min-height: auto;
+        }
 
         & ul {
             padding: 15px;
@@ -375,7 +429,6 @@
     }
 
     &.has-images {
-        display: flex;
 
         & .uploaded-images {
             display: block;
@@ -383,6 +436,10 @@
 
         & .input-wrapper {
             width: 75%;
+
+            @include tablet {
+                width: 100%;
+            }
         }
     }
 
@@ -392,6 +449,10 @@
         justify-content: center;
         align-items: center;
         min-height: 340px;
+
+        @include tablet {
+            min-height: 200px;
+        }
 
         & span {
             margin-top: 15px;
@@ -419,5 +480,34 @@
             font-size: 300px;
             height: 250px;
         }
+    }
+}
+
+#information__form--step2 {
+
+    & .form-submit {
+
+        margin-top: 90px;
+
+        @include tablet {
+            margin-top: 50px;
+        }
+
+        & .contact__button {
+
+            margin: 0 0 0 auto;
+        }
+    }
+}
+
+#information__form--step3 {
+    .form-group {
+        padding: 10px 0 20px;
+        margin: 0;
+        border: none;
+    }
+
+    .contact__button {
+        margin-top: 30px;
     }
 }

@@ -184,3 +184,59 @@ function closeModal() {
 // drag and drop
 
 //
+
+
+//
+function toggleClasses(button) {
+  // Находим ближайший родительский элемент с классом "information__form--step"
+  var stepElement = button.closest('.information__form--step');
+
+  // Если найден, добавляем класс "active" и убираем класс "done"
+  if (stepElement) {
+    stepElement.classList.add('active');
+    stepElement.classList.remove('done');
+  }
+}
+//
+
+
+//
+function enablePlateInput() {
+  var plateInput = document.getElementById('plate');
+  var formEdit = document.querySelector('.form-edit');
+
+  // Переключаем класс
+  formEdit.classList.toggle('edit');
+
+  // Инвертируем состояние disabled
+  plateInput.disabled = !plateInput.disabled;
+}
+//
+
+
+//input plate
+function formatInput(input) {
+  // Удаляем все символы, не являющиеся буквами или цифрами
+  var formattedValue = input.value.replace(/[^A-Za-z0-9]/g, '');
+
+  // Ограничиваем первые два символа латинскими буквами
+  var letters = formattedValue.substring(0, 2).replace(/[^A-Za-z]/g, '');
+
+  // Ограничиваем цифры до 6
+  var numbers = formattedValue.substring(2, 8).replace(/\D/g, '');
+
+  // Формируем новое значение
+  formattedValue = letters + '-' + numbers;
+
+  // Перезаписываем значение в поле ввода
+  input.value = formattedValue;
+
+  // Проверка ввода по регулярному выражению
+  var pattern = /^[A-Za-z]{2}-\d{6}$/;
+  if (!pattern.test(input.value)) {
+      input.classList.add('error');
+  } else {
+      input.classList.remove('error');
+  }
+}
+//
