@@ -42,7 +42,7 @@
                         </li>
                     </ul>
                 </nav>
-                <button class="button">Sælg din bil</button>
+                <button class="button" onclick="openModal()">Sælg din bil</button>
                 <button class="burger" id="burger"><span>burger</span></button>
             </div>
         </div>
@@ -239,27 +239,11 @@
         <section class="map" id="map">
             <div class="container">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2203.0752232481664!2d10.045083991994778!3d56.483691252669104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c1d3af88710fb%3A0x974cc6297dbe2541!2zTWlyYWJlbGxldmVqIDEsIDg5MzAgUmFuZGVycywg0JTQsNC90ZbRjw!5e0!3m2!1suk!2sua!4v1701610127922!5m2!1suk!2sua"
-                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2203.0645087697285!2d10.045798384664202!3d56.483875803217664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c1d3af88710fb%3A0x974cc6297dbe2541!2sMirabellevej%201%2C%208930%20Randers%2C%20Danmark!5e0!3m2!1sda!2sua!4v1701711707978!5m2!1sda!2sua"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
-
-
-
-
-
-
-
-
-
-
-        <!-- Модальное окно -->
-        <div id="myModal">
-            <label for="modalCarNumber">Номер машины в модальном окне:</label>
-            <input type="text" id="modalCarNumber" name="modalCarNumber" readonly>
-            <button type="button" onclick="closeModal()">Закрыть</button>
-        </div>
     </main>
 
     <footer class="footer">
@@ -286,11 +270,11 @@
                     <a href="tel:+4570207446" class="footer__link">
                         Hovedkontor + 45 70 20 74 46
                     </a>
-                    <a href="mailto:dk@autobasen.dk" class="footer__link">
-                        E-mail dk@autobasen.dk
+                    <a href="mailto:info@autoscandic.dk" class="footer__link">
+                        E-mail info@autoscandic.dk
                     </a>
                 </div>
-                <button class="button">Sælg din bil</button>
+                <button class="button" onclick="openModal()">Sælg din bil</button>
             </div>
         </div>
     </footer>

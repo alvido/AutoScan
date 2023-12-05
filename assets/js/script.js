@@ -70,27 +70,6 @@ $(document).ready(function () {
 });
 //
 
-// Open modal window
-function openModal() {
-  // Получаем значение введенного номера машины
-  var carNumber = document.getElementById("carNumber").value;
-
-  // Открываем модальное окно
-  var modal = document.getElementById("myModal");
-  modal.style.display = "block";
-
-  // Устанавливаем значение в input модального окна
-  var modalCarNumberInput = document.getElementById("modalCarNumber");
-  modalCarNumberInput.value = carNumber;
-}
-
-function closeModal() {
-  // Закрываем модальное окно
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-//
-
 
 // Slider
 $(document).ready(function () {
@@ -125,3 +104,83 @@ $(document).ready(function () {
   }
 });
 // slider
+
+
+// Open modal window
+// function openModal() {
+//   // Получаем элемент с идентификатором "carNumber"
+//   var carNumberElement = document.getElementById("carNumber");
+
+//   // Проверяем, существует ли элемент
+//   if (carNumberElement) {
+//     // Получаем значение введенного номера машины
+//     var carNumber = carNumberElement.value;
+//   } else {
+//     // Если элемент не существует, устанавливаем carNumber как пустую строку или другое значение по умолчанию
+//     var carNumber = "";
+//   }
+
+//   // Переходим на страницу form.html
+//   window.location.href = "form.html";
+
+//   // Устанавливаем значение в input модального окна
+//   var modalCarNumberInput = document.getElementById("modalCarNumber");
+
+//   // Используем execCommand для вставки данных в поле ввода
+//   modalCarNumberInput.focus();
+//   document.execCommand('insertText', false, carNumber);
+
+//   // Закрываем модальное окно (если необходимо)
+//   var modal = document.getElementById("myModal");
+//   modal.style.display = "none";
+// }
+
+// Open modal window
+function openModal() {
+  // Получаем элемент с идентификатором "carNumber"
+  var carNumberElement = document.getElementById("carNumber");
+
+  // Проверяем, существует ли элемент
+  if (carNumberElement) {
+    // Получаем значение введенного номера машины
+    var carNumber = carNumberElement.value;
+
+    // Сохраняем значение введенного номера машины в localStorage
+    localStorage.setItem("carNumber", carNumber);
+
+    // Логируем значение введенного номера машины в консоль
+  }
+
+  // Переходим на страницу form.html
+  window.location.href = "form.html";
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Получаем значение из localStorage
+  var carNumber = localStorage.getItem("carNumber");
+  console.log('carNumber:', carNumber);
+
+  // Устанавливаем значение в input модального окна
+  var modalCarNumberInput = document.getElementById("modalCarNumber");
+
+  if (modalCarNumberInput) {
+    modalCarNumberInput.value = carNumber || "";  // Проверяем, есть ли значение carNumber, иначе устанавливаем пустую строку
+  }
+});
+
+
+function closeModal() {
+  // Закрываем модальное окно
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+
+
+//
+
+
+
+// drag and drop
+
+//

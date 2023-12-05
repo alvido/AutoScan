@@ -205,4 +205,29 @@ a {
     padding: 20px;
     background-color: #fff;
     z-index: 1;
+    color: #000;
+
+    & input {
+        color: #B0B0B0;
+        font-family: Roboto;
+        font-size: 15px;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        border-radius: 11px;
+        border: 1px solid rgba(51, 51, 51, 0.11);
+        background: #FDFDFD;
+        outline: none;
+
+        @include phone {
+            font-size: 12px;
+        }
+
+        &:last-child {
+            margin: 0;
+        }
+
+        &:focus-visible {
+            border: 1px solid #000;
+        }
+    }
 }

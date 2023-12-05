@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoScandic</title>
+    <link rel="icon" type="image/png" href="/assets/images/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <!-- <link rel="stylesheet" href="assets/css/slick-theme.css"> -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <nav class="navigation">
+                    <ul class="navigation__list">
+                        <li class="navigation__item">
+                            <a href="https://www.mobile.de/" class="navigation__link">
+                                Cars to Export
+                            </a>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#contact" class="navigation__link">
+                                Kontakt
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="button" onclick="openModal()">Sælg din bil</button>
+                <button class="burger" id="burger"><span>burger</span></button>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="information">
+            <div class="container">
+                <div class="information__wrapper">
+                    <div class="information__head">
+                        <a class="information__head--link" href="index.html">
+                            <img src="assets/images/logo.png" alt="">
+                        </a>
+                        <div class="information__head--content">
+                            <p>
+                                Vi mangler lige de sidste informationer om dig og din bil, så kontakter vi dig med et
+                                uforpligtende tilbud indenfor 24 timer på hverdage.
+                            </p>
+                            <p>
+                                Er din bil afmeldt eller har du en ønskenummerplade bedes du sende en mail på og vi
+                                kontakter dig <a href="mailto: info@autoscandic.dk"> info@autoscandic.dk</a> med data på
+                                din
+                                bil
+                            </p>
+                        </div>
+                    </div>
+                    <form class="information__form" action="" id="informationForm" method="post">
+
+                        <div id="information__form--step1" data-step="1" class="information__form--step active">
+                            <div class="information__form--step-header">
+                                <span class="information__form--step-number">1</span>
+                                <h3 class="information__form--step-title">Bilens informationer</h3> <!---->
+                                <button class="information__form--step-edit">Rediger</button>
+                            </div>
+
+                            <div class="information__form--step-content">
+                                <fieldset class="form-group">
+                                    <label for="plate" class="form-label">
+                                        Nummerplade
+                                    </label>
+                                    <div class="form-field">
+                                        <input id="plate" name="plate" type="text" class="form-input" inputmode="text"
+                                            placeholder="av-12356" disabled="disabled">
+                                        <div class="form-edit"></div>
+                                    </div> <!---->
+                                    <div class="car-fetch-wrapper">
+                                        AUDI A3 Sportback, Hatchback, 2014, 2.0 TDI 150 HK 5-DØRS S tronic
+                                    </div>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label for="milage" class="form-label">Antal kørte kilometer</label>
+                                    <input id="milage" name="milage" type="text" class="form-input radius"> <!---->
+                                    <!---->
+                                </fieldset>
+                                <div class="form-columns">
+                                    <fieldset id="condition" class="form-group">
+                                        <label for="condition" class="form-label">
+                                            Bilens stand
+                                        </label>
+                                        <div class="radio-group-wrapper">
+                                            <div class="radio-group">
+                                                <input id="condition-as-new" name="condition" type="radio"
+                                                    value="som_ny" class="form-radio">
+                                                <label for="condition-as-new" class="form-label">
+                                                    Som ny
+                                                </label>
+                                            </div>
+                                            <div class="radio-group">
+                                                <input id="condition-good" name="condition" type="radio" value="god"
+                                                    class="form-radio">
+                                                <label for="condition-good" class="form-label">
+                                                    God
+                                                </label>
+                                            </div>
+                                            <div class="radio-group">
+                                                <input id="condition-used" name="condition" type="radio" value="brugt"
+                                                    class="form-radio">
+                                                <label for="condition-used" class="form-label">
+                                                    Brugt
+                                                </label>
+                                            </div>
+                                            <div class="radio-group">
+                                                <input id="condition-very-used" name="condition" type="radio"
+                                                    value="meget_brugt" class="form-radio">
+                                                <label for="condition-very-used" class="form-label">
+                                                    Meget brugt
+                                                </label>
+                                            </div>
+                                        </div> <!---->
+                                    </fieldset>
+                                    <fieldset id="service" class="form-group">
+                                        <label for="service" class="form-label">
+                                            Service
+                                        </label>
+                                        <div class="radio-group-wrapper">
+                                            <div class="radio-group">
+                                                <input id="service-complied" name="service" type="radio"
+                                                    value="Overholdt" class="form-radio">
+                                                <label for="service-complied" class="form-label">
+                                                    Overholdt
+                                                </label>
+                                            </div>
+                                            <div class="radio-group">
+                                                <input id="service-partially-complied" name="service" type="radio"
+                                                    value="Delvist overholdt" class="form-radio">
+                                                <label for="service-partially-complied" class="form-label">Delvist
+                                                    overholdt
+                                                </label>
+                                            </div>
+                                            <div class="radio-group">
+                                                <input id="service-not-complied" name="service" type="radio"
+                                                    value="Ikke overholdt" class="form-radio">
+                                                <label for="service-not-complied" class="form-label">
+                                                    Ikke overholdt
+                                                </label>
+                                            </div>
+                                        </div> <!---->
+                                    </fieldset>
+                                    <fieldset id="accessories" class="form-group">
+                                        <label for="accessories" class="form-label">
+                                            Ekstraudstyr
+                                        </label>
+                                        <div class="checkbox-group-wrapper">
+                                            <div class="checkbox-group">
+                                                <input id="accessories__automatic-transmission" name="accessories"
+                                                    type="checkbox" value="Automatgear" class="form-checkbox">
+                                                <label for="accessories__automatic-transmission" class="form-label">
+                                                    Automatgear
+                                                </label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input id="accessories__adaptive-cruise-control" name="accessories"
+                                                    type="checkbox" value="Adaptiv fartpilot" class="form-checkbox">
+                                                <label for="accessories__adaptive-cruise-control" class="form-label">
+                                                    Adaptiv fartpilot
+                                                </label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input id="accessories__aircondition" name="accessories" type="checkbox"
+                                                    value="Aircondition/Klimaanlæg" class="form-checkbox">
+                                                <label for="accessories__aircondition" class="form-label">
+                                                    Aircondition / Klimaanlæg
+                                                </label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input id="accessories__fixed-trailer-hitch" name="accessories"
+                                                    type="checkbox" value="Anhængertræk - fast" class="form-checkbox">
+                                                <label for="accessories__fixed-trailer-hitch" class="form-label">
+                                                    Anhængertræk
+                                                </label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input id="accessories__rear-camera" name="accessories" type="checkbox"
+                                                    value="Bakkamera" class="form-checkbox">
+                                                <label for="accessories__rear-camera" class="form-label">
+                                                    Bakkamera
+                                                </label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input id="accessories__extra-wheels" name="accessories" type="checkbox"
+                                                    value="Ekstra sæt hjul" class="form-checkbox">
+                                                <label for="accessories__extra-wheels" class="form-label">
+                                                    Ekstra sæt hjul
+                                                </label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input id="accessories__led-headlights" name="accessories"
+                                                    type="checkbox" value="LED forlygter" class="form-checkbox">
+                                                <label for="accessories__led-headlights" class="form-label">
+                                                    LED / Xenon lygter
+                                                </label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input id="accessories__navigation" name="accessories" type="checkbox"
+                                                    value="Navigation" class="form-checkbox">
+                                                <label for="accessories__navigation" class="form-label">
+                                                    Navigation
+                                                </label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input id="accessories__panoramic-sunroof" name="accessories"
+                                                    type="checkbox" value="Panoramatag" class="form-checkbox">
+                                                <label for="accessories__panoramic-sunroof" class="form-label">
+                                                    Panoramatag
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <fieldset class="form-group last-child">
+                                    <label for="remarks" class="form-label">Øvrige
+                                        bemærkninger
+                                        <legend>(valgfri)</legend>
+                                    </label>
+                                    <textarea class="form-input form-textarea" id="remarks" name="remarks"
+                                        rows="4"></textarea>
+                                </fieldset>
+                                <fieldset class="form-submit">
+                                    <button class="contact__button">Næste</button>
+                                </fieldset>
+
+                            </div>
+                        </div>
+
+                        <div id="information__form--step2" data-step="2" class="information__form--step active">
+                            <div class="information__form--step-header">
+                                <span class="information__form--step-number">2</span>
+                                <div class="information__form--step-header--wrapper">
+                                    <h3 class="information__form--step-title">Tilføj billeder af bilen</h3> <!---->
+                                    <p>For at kunne give dig det bedste tilbud på din bil, så vil vi gerne have billeder
+                                        af din bil. Det er ikke et krav, men vi vil opfordre dig til at uploade nogle.
+                                    </p>
+                                </div>
+                                <button class="information__form--step-edit">Rediger</button>
+                            </div>
+
+                            <div class="information__form--step-content">
+
+                                <div class="information__form--step-drop-container has-images">
+                                    <div class="input-wrapper" id="inputWrapper">
+                                        <div class="contact__button">
+                                            <input type="file" name="image-upload[]" multiple="multiple"
+                                                accept="image/*" id="fileInput">
+                                            Vælg billeder
+                                        </div>
+                                        <span>eller træk filer for at uploade</span>
+                                    </div>
+                                    <div class="uploaded-images" id="uploadedImages">
+                                        <ul>
+                                            <li>
+                                                <span>
+                                                    <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg"
+                                                        height="16" width="14" viewBox="0 0 448 512">
+                                                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                                                        <path
+                                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                                    </svg>
+                                                    new.png (1.29 MB)
+                                                </span>
+                                                <svg class="icon icon-remove" xmlns="http://www.w3.org/2000/svg"
+                                                    height="16" width="14" viewBox="0 0 448 512">
+                                                    <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                                                    <path
+                                                        d="M170.5 51.6L151.5 80h145l-19-28.4c-1.5-2.2-4-3.6-6.7-3.6H177.1c-2.7 0-5.2 1.3-6.7 3.6zm147-26.6L354.2 80H368h48 8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8V432c0 44.2-35.8 80-80 80H112c-44.2 0-80-35.8-80-80V128H24c-13.3 0-24-10.7-24-24S10.7 80 24 80h8H80 93.8l36.7-55.1C140.9 9.4 158.4 0 177.1 0h93.7c18.7 0 36.2 9.4 46.6 24.9zM80 128V432c0 17.7 14.3 32 32 32H336c17.7 0 32-14.3 32-32V128H80zm80 64V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16z" />
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <span>
+                                                    <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg"
+                                                        height="16" width="14" viewBox="0 0 448 512">
+                                                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                                                        <path
+                                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                                    </svg>
+                                                    new.png (1.29 MB)
+                                                </span>
+                                                <svg class="icon icon-remove" xmlns="http://www.w3.org/2000/svg"
+                                                    height="16" width="14" viewBox="0 0 448 512">
+                                                    <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                                                    <path
+                                                        d="M170.5 51.6L151.5 80h145l-19-28.4c-1.5-2.2-4-3.6-6.7-3.6H177.1c-2.7 0-5.2 1.3-6.7 3.6zm147-26.6L354.2 80H368h48 8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8V432c0 44.2-35.8 80-80 80H112c-44.2 0-80-35.8-80-80V128H24c-13.3 0-24-10.7-24-24S10.7 80 24 80h8H80 93.8l36.7-55.1C140.9 9.4 158.4 0 177.1 0h93.7c18.7 0 36.2 9.4 46.6 24.9zM80 128V432c0 17.7 14.3 32 32 32H336c17.7 0 32-14.3 32-32V128H80zm80 64V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16z" />
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <span>
+                                                    <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg"
+                                                        height="16" width="14" viewBox="0 0 448 512">
+                                                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                                                        <path
+                                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                                    </svg>
+                                                    new.png (1.29 MB)
+                                                </span>
+                                                <svg class="icon icon-remove" xmlns="http://www.w3.org/2000/svg"
+                                                    height="16" width="14" viewBox="0 0 448 512">
+                                                    <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                                                    <path
+                                                        d="M170.5 51.6L151.5 80h145l-19-28.4c-1.5-2.2-4-3.6-6.7-3.6H177.1c-2.7 0-5.2 1.3-6.7 3.6zm147-26.6L354.2 80H368h48 8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8V432c0 44.2-35.8 80-80 80H112c-44.2 0-80-35.8-80-80V128H24c-13.3 0-24-10.7-24-24S10.7 80 24 80h8H80 93.8l36.7-55.1C140.9 9.4 158.4 0 177.1 0h93.7c18.7 0 36.2 9.4 46.6 24.9zM80 128V432c0 17.7 14.3 32 32 32H336c17.7 0 32-14.3 32-32V128H80zm80 64V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16z" />
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <fieldset class="form-submit">
+                                    <button class="contact__button">Næste</button>
+                                </fieldset>
+                            </div>
+                        </div>
+
+                        <div id="information__form--step3" data-step="3" class="information__form--step active done">
+                            <div class="information__form--step-header">
+                                <span class="information__form--step-number">3</span>
+                                <h3 class="information__form--step-title">Kontaktoplysninger</h3> <!---->
+                                <button class="information__form--step-edit">Rediger</button>
+                            </div>
+
+                            <div class="information__form--step-content">
+
+                                <fieldset class="form-submit">
+                                    <button class="contact__button">Næste</button>
+                                </fieldset>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </section>
+        <!-- Модальное окно -->
+        <div id="myModal">
+            <label for="modalCarNumber">Номер машины в модальном окне:</label>
+            <input type="text" id="modalCarNumber" name="modalCarNumber" readonly>
+            <button type="button" onclick="closeModal()">Закрыть</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <a href="/index.html" class="footer__logo">
+                    <img src="assets/images/logo.png" alt="">
+                </a>
+                <div class="footer__col --opening">
+                    <p class="footer__text">
+                        Åbningstider
+                        <br>
+                        Mandag – fredag 9 -17
+                        <br>
+                        Lørdag – Søndag lukket
+                    </p>
+                </div>
+                <div class="footer__col --contact">
+                    <p class="footer__text">
+                        Kontakt Autoscandic
+                        <br>
+                        AutobasenP.O Pedersens vej 14BDK-8200 Århus N
+                    </p>
+                    <a href="tel:+4570207446" class="footer__link">
+                        Hovedkontor + 45 70 20 74 46
+                    </a>
+                    <a href="mailto:info@autoscandic.dk" class="footer__link">
+                        E-mail info@autoscandic.dk
+                    </a>
+                </div>
+                <button class="button" onclick="openModal()">Sælg din bil</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
