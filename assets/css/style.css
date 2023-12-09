@@ -1537,6 +1537,11 @@ a {
     padding: 0 0 30px 0;
   }
 }
+@media (max-width: 560px) {
+  .information__form--step.active .information__form--step-header--wrapper p {
+    display: block;
+  }
+}
 .information__form--step.active .information__form--step-number {
   color: #000;
   border-radius: 11px;
@@ -1547,6 +1552,7 @@ a {
   font-size: 0;
   border: none;
   background: url(../images/done.svg) no-repeat center;
+  background-size: cover;
 }
 .information__form--step.done .information__form--step-title {
   color: #B8995E;
@@ -1963,6 +1969,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   min-height: 340px;
+  width: 100%;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }

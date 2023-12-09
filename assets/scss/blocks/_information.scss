@@ -104,6 +104,16 @@
                     }
                 }
 
+
+                & .information__form--step-header--wrapper p {
+
+                    @include mobile {
+                        display: block;
+                    }
+                }
+
+
+
                 & .information__form--step-number {
                     color: #000;
                     border-radius: 11px;
@@ -118,6 +128,7 @@
                     font-size: 0;
                     border: none;
                     background: url(../images/done.svg) no-repeat center;
+                    background-size: cover;
                 }
 
                 & .information__form--step-title {
@@ -518,6 +529,7 @@
         justify-content: center;
         align-items: center;
         min-height: 340px;
+        width: 100%;
         transition: all .3s ease;
 
         &._active {
