@@ -125,8 +125,8 @@ function formatInput(input) {
   // Удаляем все символы, не являющиеся буквами или цифрами
   var formattedValue = input.value.replace(/[^A-Za-z0-9]/g, '');
 
-  // Ограничиваем первые два символа латинскими буквами
-  var letters = formattedValue.substring(0, 2).replace(/[^A-Za-z]/g, '');
+  // Ограничиваем первые два символа латинскими буквами и преобразуем их в заглавные
+  var letters = formattedValue.substring(0, 2).replace(/[^A-Za-z]/g, '').toUpperCase();
 
   // Ограничиваем цифры до 6
   var numbers = formattedValue.substring(2, 8).replace(/\D/g, '');
@@ -145,6 +145,7 @@ function formatInput(input) {
     input.classList.remove('error');
   }
 }
+
 //
 
 
@@ -165,7 +166,7 @@ function openModal() {
   }
 
   // Переходим на страницу form.html
-  window.location.href = "form.html";
+  window.location.href = "/form";
 }
 
 
@@ -332,7 +333,7 @@ function updateFileList() {
     // Добавляем svg в span
     spanElement.prepend(checkIcon);
 
-    // Создаем новый элемент svg для иконки "icon-remove"
+    // Создаем новый элемент svg для иконки "icon-check"
     const removeIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     removeIcon.setAttribute("class", "icon icon-remove");
     removeIcon.setAttribute("xmlns", "http://www.w3.org/2000/svg");
