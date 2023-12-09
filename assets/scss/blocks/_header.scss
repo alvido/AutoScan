@@ -76,18 +76,16 @@
         @include ipad {
             flex-direction: column;
         }
-    }
+        
+        & li a{
+            color: $white;
+            font-size: 22px;
+            letter-spacing: 1.1px;
+            transition: color .3s ease;
 
-    &__item {}
-
-    &__link {
-        color: $white;
-        font-size: 22px;
-        letter-spacing: 1.1px;
-        transition: color .3s ease;
-
-        &:hover {
-            color: $gold;
+            &:hover {
+                color: $gold;
+            }
         }
     }
 }

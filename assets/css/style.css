@@ -383,14 +383,14 @@ a {
             flex-direction: column;
   }
 }
-.navigation__link {
+.navigation__list li a {
   color: #fff;
   font-size: 22px;
   letter-spacing: 1.1px;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
-.navigation__link:hover {
+.navigation__list li a:hover {
   color: #B8995E;
 }
 
@@ -1228,16 +1228,13 @@ a {
   }
 }
 .contact__form .contact__agree input {
-  margin: 0;
+  margin: 0 5px 0 0;
 }
 @media (max-width: 560px) {
   .contact__form .contact__agree input {
     width: 10px;
     height: 10px;
   }
-}
-.contact__form .contact__agree #mainContactPermission {
-  margin-right: 5px;
 }
 .contact__form .contact__agree a {
   color: inherit;
@@ -1483,7 +1480,7 @@ a {
   }
 }
 .information__head p a {
-  color: #00B861;
+  font-weight: 700;
   text-decoration-line: underline;
 }
 .information__form {
@@ -1502,10 +1499,14 @@ a {
   -webkit-box-shadow: 3px 3px 81px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 3px 3px 81px 0px rgba(0, 0, 0, 0.2);
   opacity: 0.6;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 @media (max-width: 560px) {
   .information__form--step {
-    padding: 0 30px;
+    padding: 0 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
   }
 }
 .information__form--step:last-child {
@@ -1513,6 +1514,12 @@ a {
 }
 .information__form--step.active {
   opacity: 1;
+}
+@media (max-width: 560px) {
+  .information__form--step.active {
+    padding: 0 30px;
+    border-radius: 11px;
+  }
 }
 .information__form--step.active .information__form--step-content {
   padding: 0px 74px 50px;
@@ -1525,9 +1532,9 @@ a {
     padding: 0 30px 50px;
   }
 }
-@media (max-width: 560px) {
+@media (max-width: 768px) {
   .information__form--step.active .information__form--step-content {
-    padding: 0;
+    padding: 0 0 30px 0;
   }
 }
 .information__form--step.active .information__form--step-number {
@@ -1559,7 +1566,7 @@ a {
 }
 @media (max-width: 560px) {
   .information__form--step-header {
-    padding: 30px 0;
+    padding: 10px 0;
   }
 }
 .information__form--step-header--wrapper p {
@@ -1568,8 +1575,17 @@ a {
   font-weight: 300;
   line-height: 1.6;
 }
+@media (max-width: 560px) {
+  .information__form--step-header--wrapper p {
+    display: none;
+    line-height: 1.5;
+    opacity: 0.7;
+  }
+}
 .information__form--step-number {
   margin-right: 24px;
+  min-width: 30px;
+  min-height: 30px;
   width: 50px;
   height: 50px;
   display: -webkit-box;
@@ -1587,9 +1603,21 @@ a {
   border-radius: 25px;
   border: 1px solid #004671;
 }
+@media (max-width: 560px) {
+  .information__form--step-number {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+}
 .information__form--step-title {
   font-size: 20px;
   font-weight: 700;
+}
+@media (max-width: 560px) {
+  .information__form--step-title {
+    font-size: 16px;
+  }
 }
 .information__form--step-edit {
   display: none;
@@ -1627,6 +1655,11 @@ a {
 .form-group legend {
   color: #717171;
   font-size: 14px;
+}
+@media (max-width: 560px) {
+  .form-group legend {
+    font-size: 10px;
+  }
 }
 .form-columns {
   display: -webkit-box;
@@ -1692,6 +1725,11 @@ a {
       -ms-flex-align: center;
           align-items: center;
 }
+@media (max-width: 560px) {
+  .form-field {
+    position: relative;
+  }
+}
 .form-input {
   display: block;
   width: 100%;
@@ -1708,10 +1746,22 @@ a {
     padding: 10px 16px;
   }
 }
+@media (max-width: 560px) {
+  .form-input {
+    border-radius: 8px;
+  }
+}
 .form-input.no-radius {
-  width: calc(100% - 54px);
+  width: calc(100% - 40px);
   border-radius: 3px 0px 0px 3px;
   text-transform: uppercase;
+  border-right: none;
+}
+@media (max-width: 560px) {
+  .form-input.no-radius {
+    width: calc(100% - 0px);
+    border-radius: 8px;
+  }
 }
 .form-textarea {
   width: 100%;
@@ -1720,6 +1770,11 @@ a {
   border: 1px solid #D0D0D0;
   resize: vertical;
   text-transform: none;
+}
+@media (max-width: 560px) {
+  .form-textarea {
+    border-radius: 8px;
+  }
 }
 .form-edit {
   width: 54px;
@@ -1734,6 +1789,17 @@ a {
   .form-edit {
     width: 40px;
     height: 40px;
+  }
+}
+@media (max-width: 560px) {
+  .form-edit {
+    position: absolute;
+    right: 0;
+    border-radius: 8px;
+    width: 34px;
+  }
+  .form-edit svg {
+    width: 10px;
   }
 }
 .form-edit svg {
@@ -1785,6 +1851,18 @@ a {
 
 .car-fetch-wrapper {
   margin-top: 12px;
+}
+@media (max-width: 768px) {
+  .car-fetch-wrapper {
+    font-size: 14px;
+  }
+}
+@media (max-width: 560px) {
+  .car-fetch-wrapper {
+    font-size: 12px;
+    color: #646464;
+    line-height: 1.25;
+  }
 }
 
 .information__form--step-drop-container {
@@ -1885,6 +1963,11 @@ a {
       -ms-flex-align: center;
           align-items: center;
   min-height: 340px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.information__form--step-drop-container .input-wrapper._active {
+  background: #B8995E;
 }
 @media (max-width: 768px) {
   .information__form--step-drop-container .input-wrapper {
@@ -1899,6 +1982,13 @@ a {
   line-height: 1.08;
   opacity: 0.6;
 }
+@media (max-width: 560px) {
+  .information__form--step-drop-container .input-wrapper span {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 2.1;
+  }
+}
 .information__form--step-drop-container .contact__button {
   margin: 0;
   position: relative;
@@ -1908,12 +1998,12 @@ a {
 .information__form--step-drop-container .contact__button input {
   position: absolute;
   top: 0;
+  bottom: 0;
+  left: 0;
   right: 0;
   cursor: pointer;
   opacity: 0;
   filter: alpha(opacity=0);
-  font-size: 300px;
-  height: 250px;
 }
 
 #information__form--step2 .form-submit {
@@ -1924,14 +2014,29 @@ a {
     margin-top: 50px;
   }
 }
+@media (max-width: 560px) {
+  #information__form--step2 .form-submit {
+    margin-top: 30px;
+  }
+}
 #information__form--step2 .form-submit .contact__button {
   margin: 0 0 0 auto;
+}
+@media (max-width: 560px) {
+  #information__form--step2 .form-submit .contact__button {
+    margin: 0 auto;
+  }
 }
 
 #information__form--step3 .form-group {
   padding: 10px 0 20px;
   margin: 0;
   border: none;
+}
+@media (max-width: 560px) {
+  #information__form--step3 .form-group {
+    padding: 10px 0;
+  }
 }
 #information__form--step3 .contact__button {
   margin-top: 30px;

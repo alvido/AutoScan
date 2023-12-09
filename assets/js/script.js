@@ -106,36 +106,49 @@ $(document).ready(function () {
 // slider
 
 
-// Open modal window
-// function openModal() {
-//   // Получаем элемент с идентификатором "carNumber"
-//   var carNumberElement = document.getElementById("carNumber");
+// enable Plate Input
+function enablePlateInput() {
+  var plateInput = document.getElementById('plate');
+  var formEdit = document.querySelector('.form-edit');
 
-//   // Проверяем, существует ли элемент
-//   if (carNumberElement) {
-//     // Получаем значение введенного номера машины
-//     var carNumber = carNumberElement.value;
-//   } else {
-//     // Если элемент не существует, устанавливаем carNumber как пустую строку или другое значение по умолчанию
-//     var carNumber = "";
-//   }
+  // Переключаем класс
+  formEdit.classList.toggle('edit');
 
-//   // Переходим на страницу form.html
-//   window.location.href = "form.html";
+  // Инвертируем состояние disabled
+  plateInput.disabled = !plateInput.disabled;
+}
+//
 
-//   // Устанавливаем значение в input модального окна
-//   var modalCarNumberInput = document.getElementById("modalCarNumber");
 
-//   // Используем execCommand для вставки данных в поле ввода
-//   modalCarNumberInput.focus();
-//   document.execCommand('insertText', false, carNumber);
+//input plate format//
+function formatInput(input) {
+  // Удаляем все символы, не являющиеся буквами или цифрами
+  var formattedValue = input.value.replace(/[^A-Za-z0-9]/g, '');
 
-//   // Закрываем модальное окно (если необходимо)
-//   var modal = document.getElementById("myModal");
-//   modal.style.display = "none";
-// }
+  // Ограничиваем первые два символа латинскими буквами
+  var letters = formattedValue.substring(0, 2).replace(/[^A-Za-z]/g, '');
 
-// Open modal window
+  // Ограничиваем цифры до 6
+  var numbers = formattedValue.substring(2, 8).replace(/\D/g, '');
+
+  // Формируем новое значение
+  formattedValue = letters + '-' + numbers;
+
+  // Перезаписываем значение в поле ввода
+  input.value = formattedValue;
+
+  // Проверка ввода по регулярному выражению
+  var pattern = /^[A-Za-z]{2}-\d{6}$/;
+  if (!pattern.test(input.value)) {
+      input.classList.add('error');
+  } else {
+      input.classList.remove('error');
+  }
+}
+//
+
+
+// Open Form page window
 function openModal() {
   // Получаем элемент с идентификатором "carNumber"
   var carNumberElement = document.getElementById("carNumber");
@@ -168,25 +181,32 @@ document.addEventListener("DOMContentLoaded", function () {
     modalCarNumberInput.value = carNumber || "";  // Проверяем, есть ли значение carNumber, иначе устанавливаем пустую строку
   }
 });
+//
 
 
-function closeModal() {
-  // Закрываем модальное окно
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
+// go to next step in information__form--step
+function nextStep(button) {
+  // Находим ближайший родительский элемент с классом "information__form--step"
+  var currentStepElement = button.closest('.information__form--step');
+
+  // Если найден, добавляем класс "done" и убираем класс "active"
+  if (currentStepElement) {
+    currentStepElement.classList.add('done');
+    currentStepElement.classList.remove('active');
+
+    // Находим следующий элемент с классом "information__form--step"
+    var nextStepElement = currentStepElement.nextElementSibling;
+
+    // Если найден, добавляем класс "active"
+    if (nextStepElement) {
+      nextStepElement.classList.add('active');
+    }
+  }
 }
-
-
 //
 
 
-
-// drag and drop
-
-//
-
-
-//
+// edit information__form--step
 function toggleClasses(button) {
   // Находим ближайший родительский элемент с классом "information__form--step"
   var stepElement = button.closest('.information__form--step');
@@ -200,43 +220,95 @@ function toggleClasses(button) {
 //
 
 
-//
-function enablePlateInput() {
-  var plateInput = document.getElementById('plate');
-  var formEdit = document.querySelector('.form-edit');
+// upload files drag and drop
+const dropFileZone = document.getElementById("inputWrapper")
+const statusText = document.getElementById("uploadForm_Status")
+const sizeText = document.getElementById("uploadForm_Size")
+const uploadInput = document.getElementById("fileInput")
 
-  // Переключаем класс
-  formEdit.classList.toggle('edit');
-
-  // Инвертируем состояние disabled
-  plateInput.disabled = !plateInput.disabled;
+let setStatus = (text) => {
+  statusText.textContent = text
 }
-//
 
+const uploadUrl = "/unicorns";
 
-//input plate
-function formatInput(input) {
-  // Удаляем все символы, не являющиеся буквами или цифрами
-  var formattedValue = input.value.replace(/[^A-Za-z0-9]/g, '');
+["dragover", "drop"].forEach(function(event) {
+  document.addEventListener(event, function(evt) {
+    evt.preventDefault()
+    return false
+  })
+})
 
-  // Ограничиваем первые два символа латинскими буквами
-  var letters = formattedValue.substring(0, 2).replace(/[^A-Za-z]/g, '');
+dropFileZone.addEventListener("dragenter", function() {
+  dropFileZone.classList.add("_active")
+})
 
-  // Ограничиваем цифры до 6
-  var numbers = formattedValue.substring(2, 8).replace(/\D/g, '');
+dropFileZone.addEventListener("dragleave", function() {
+  dropFileZone.classList.remove("_active")
+})
 
-  // Формируем новое значение
-  formattedValue = letters + '-' + numbers;
+dropFileZone.addEventListener("drop", function() {
+  dropFileZone.classList.remove("_active")
+  const file = event.dataTransfer?.files[0]
+  if (!file) {
+    return
+  }
 
-  // Перезаписываем значение в поле ввода
-  input.value = formattedValue;
-
-  // Проверка ввода по регулярному выражению
-  var pattern = /^[A-Za-z]{2}-\d{6}$/;
-  if (!pattern.test(input.value)) {
-      input.classList.add('error');
+  if (file.type.startsWith("image/")) {
+    uploadInput.files = event.dataTransfer.files
+    processingUploadFile()
   } else {
-      input.classList.remove('error');
+    setStatus("Kun billeder kan uploades")
+    return false
+  }
+})
+
+uploadInput.addEventListener("change", (event) => {
+  const file = uploadInput.files?.[0]
+  if (file && file.type.startsWith("image/")) {
+    processingUploadFile()
+  } else {
+    setStatus("Kun billeder kan uploades")
+    return false
+  }
+})
+
+function processingUploadFile(file) {
+  if (file) {
+    const dropZoneData = new FormData()
+    const xhr = new XMLHttpRequest()
+
+    dropZoneData.append("file", file)
+
+    xhr.open("POST", uploadUrl, true)
+
+    xhr.send(dropZoneData)
+
+    xhr.onload = function () {
+      if (xhr.status == 200) {
+        setStatus("All upload")
+      } else {
+        setStatus("Error")
+      }
+      HTMLElement.style.display = "none"
+    }
   }
 }
-//
+
+function processingDownloadFileWithFetch() {
+  fetch(url, {
+    method: "POST",
+  }).then(async (res) => {
+    const reader = res?.body?.getReader();
+    while (true && reader) {
+      const { value, done } = await reader?.read()
+      console.log("value", value)
+      if (done) break
+      console.log("Received", value)
+    }
+  })
+}
+
+
+
+

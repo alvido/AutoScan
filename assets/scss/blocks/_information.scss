@@ -47,7 +47,7 @@
             }
 
             & a {
-                color: #00B861;
+                font-weight: 700;
                 text-decoration-line: underline;
             }
         }
@@ -68,9 +68,12 @@
             border: 1px solid rgba(208, 208, 208, 0.50);
             box-shadow: 3px 3px 81px 0px rgba(0, 0, 0, 0.20);
             opacity: 0.6;
+            transition: all .3s ease;
 
             @include mobile {
-                padding: 0 30px;
+                padding: 0 15px;
+                border-radius: 8px;
+                margin-bottom: 10px;
             }
 
             &:last-child {
@@ -80,6 +83,11 @@
             &.active {
 
                 opacity: 1;
+
+                @include mobile {
+                    padding: 0 30px;
+                    border-radius: 11px;
+                }
 
                 & .information__form--step-content {
                     padding: 0px 74px 50px;
@@ -91,8 +99,8 @@
                         padding: 0 30px 50px;
                     }
 
-                    @include mobile {
-                        padding: 0;
+                    @include tablet {
+                        padding: 0 0 30px 0;
                     }
                 }
 
@@ -128,7 +136,7 @@
                 position: relative;
 
                 @include mobile {
-                    padding: 30px 0;
+                    padding: 10px 0;
                 }
 
                 &--wrapper {
@@ -138,12 +146,20 @@
                         font-size: 10px;
                         font-weight: 300;
                         line-height: 1.6;
+
+                        @include mobile {
+                            display: none;
+                            line-height: 1.5;
+                            opacity: .7;
+                        }
                     }
                 }
             }
 
             &-number {
                 margin-right: 24px;
+                min-width: 30px;
+                min-height: 30px;
                 width: 50px;
                 height: 50px;
                 display: flex;
@@ -154,11 +170,21 @@
                 line-height: 1.35;
                 border-radius: 25px;
                 border: 1px solid #004671;
+
+                @include mobile {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 10px;
+                }
             }
 
             &-title {
                 font-size: 20px;
                 font-weight: 700;
+
+                @include mobile {
+                    font-size: 16px;
+                }
             }
 
             &-edit {
@@ -204,6 +230,10 @@
         & legend {
             color: #717171;
             font-size: 14px;
+
+            @include mobile {
+                font-size: 10px;
+            }
         }
     }
 
@@ -260,6 +290,10 @@
     &-field {
         display: flex;
         align-items: center;
+
+        @include mobile {
+            position: relative;
+        }
     }
 
     &-input {
@@ -277,10 +311,20 @@
             padding: 10px 16px;
         }
 
+        @include mobile {
+            border-radius: 8px;
+        }
+
         &.no-radius {
-            width: calc(100% - 54px);
+            width: calc(100% - 40px);
             border-radius: 3px 0px 0px 3px;
             text-transform: uppercase;
+            border-right: none;
+
+            @include mobile {
+                width: calc(100% - 0px);
+                border-radius: 8px;
+            }
         }
     }
 
@@ -291,6 +335,10 @@
         border: 1px solid #D0D0D0;
         resize: vertical;
         text-transform: none;
+
+        @include mobile {
+            border-radius: 8px;
+        }
     }
 
     &-edit {
@@ -304,6 +352,17 @@
         @include tablet {
             width: 40px;
             height: 40px;
+        }
+
+        @include mobile {
+            position: absolute;
+            right: 0;
+            border-radius: 8px;
+            width: 34px;
+
+            & svg {
+                width: 10px;
+            }
         }
 
         & svg {
@@ -360,6 +419,16 @@
 
 .car-fetch-wrapper {
     margin-top: 12px;
+
+    @include tablet {
+        font-size: 14px;
+    }
+
+    @include mobile {
+        font-size: 12px;
+        color: #646464;
+        line-height: 1.25;
+    }
 }
 
 
@@ -449,6 +518,11 @@
         justify-content: center;
         align-items: center;
         min-height: 340px;
+        transition: all .3s ease;
+
+        &._active {
+            background: $gold;
+        }
 
         @include tablet {
             min-height: 200px;
@@ -461,6 +535,12 @@
             font-weight: 500;
             line-height: 1.08;
             opacity: .6;
+
+            @include mobile {
+                margin-top: 8px;
+                font-size: 12px;
+                line-height: 2.1;
+            }
         }
     }
 
@@ -473,12 +553,12 @@
         & input {
             position: absolute;
             top: 0;
+            bottom: 0;
+            left: 0;
             right: 0;
             cursor: pointer;
             opacity: 0.0;
             filter: alpha(opacity=0);
-            font-size: 300px;
-            height: 250px;
         }
     }
 }
@@ -493,9 +573,17 @@
             margin-top: 50px;
         }
 
+        @include mobile {
+            margin-top: 30px;
+        }
+
         & .contact__button {
 
             margin: 0 0 0 auto;
+
+            @include mobile {
+                margin: 0 auto;
+            }
         }
     }
 }
@@ -505,6 +593,10 @@
         padding: 10px 0 20px;
         margin: 0;
         border: none;
+
+        @include mobile {
+            padding: 10px 0;
+        }
     }
 
     .contact__button {
